@@ -687,23 +687,32 @@
 
         // Function to send data to Google Sheets
         async function sendToGoogleSheets(data) {
-            // Replace with your actual web app URL from the Google Apps Script deployment
-            const googleScriptUrl = 'https://script.google.com/macros/s/AKfycbxHpvYsvuHTK_eTyvfuRcEstg7XO9qLZRgAOxOr2j_-SSMT5L0w12Bj2co5HO0gk8Iq/exec';
-            
-            const response = await fetch(googleScriptUrl, {
-                method: 'POST',
-                body: JSON.stringify(data),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            });
-            
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
+            try {
+                console.log("Sending data:", data);
+                const response = await fetch(googleScriptUrl, {
+                    method: 'POST',
+                    body: JSON.stringify(data),
+                    headers: {
+                        'Content-Type': 'application/json'
             }
-            
-            return response.text();
+        });
+        
+        console.log("Response status:", response.status);
+        
+        if (!response.ok) {
+            const errorText = await response.text();
+            console.error("Error response:", errorText);
+            throw new Error(`Network response was not ok: ${response.status} ${errorText}`);
         }
+        
+        const responseText = await response.text();
+        console.log("Success response:", responseText);
+        return responseText;
+    } catch (error) {
+        console.error("Fetch error:", error);
+        throw error;
+    }
+}
 
         // Add to calendar functionality
         document.getElementById('add-calendar').addEventListener('click', function(e) {
