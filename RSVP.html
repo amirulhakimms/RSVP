@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding RSVP</title>
+    <style>
+        :root {
+            --primary-color: #d4a373;
+            --secondary-color: #faedcd;
+            --accent-color: #e9edc9;
+            --text-color: #5e503f;
+            --light-text: #fefae0;
+            --dark-text: #283618;
+            --success-color: #606c38;
+            --error-color: #bc6c25;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            padding: 40px 0;
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+        }
+
+        .invitation {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .invitation h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .invitation p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .details {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 30px 0;
+            gap: 20px;
+        }
+
+        .detail-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .detail-card h3 {
+            color: var(--dark-text);
+            margin-bottom: 10px;
+        }
+
+        .detail-card p {
+            font-size: 1.1rem;
+        }
+
+        .map-container {
+            margin: 30px 0;
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .map-container h3 {
+            margin-bottom: 15px;
+            color: var(--dark-text);
+        }
+
+        .map-responsive {
+            overflow: hidden;
+            padding-bottom: 56.25%;
+            position: relative;
+            height: 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .map-responsive iframe {
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+        }
+
+        .rsvp-form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .rsvp-form h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: var(--dark-text);
+        }
+
+        .form-group input, 
+        .form-group textarea, 
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .attendance-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .attendance-option {
+            flex: 1;
+        }
+
+        .attendance-option input[type="radio"] {
+            display: none;
+        }
+
+        .attendance-option label {
+            display: block;
+            text-align: center;
+            padding: 10px;
+            background-color: var(--secondary-color);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .attendance-option input[type="radio"]:checked + label {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .number-stepper {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            max-width: 200px;
+            margin: 0 auto;
+        }
+
+        .stepper-btn {
+            width: 40px;
+            height: 36px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .stepper-btn:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .stepper-input {
+            flex: 1;
+            text-align: center;
+            border: none;
+            font-size: 1.2rem;
+            width: 50px;
+            padding: 5px;
+            background: transparent;
+        }
+
+        .submit-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            display: block;
+            margin: 20px auto 0;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--success-color);
+        }
+
+        .confirmation {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            text-align: center;
+            display: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .confirmation h2 {
+            color: var(--success-color);
+            margin-bottom: 20px;
+        }
+
+        .confirmation p {
+            margin-bottom: 15px;
+        }
+
+        .add-calendar {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-calendar:hover {
+            background-color: var(--success-color);
+        }
+
+        .footer {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            margin-top: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer h3 {
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            margin-top: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact-info p {
+            margin-bottom: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .details {
+                flex-direction: column;
+            }
+            
+            .detail-card {
+                width: 100%;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .header p {
+                font-size: 1rem;
+            }
+        }
+
+        /* Landing page selector */
+        .landing-selector {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            z-index: 1000;
+            font-size: 0.8rem;
+        }
+
+        .landing-selector select {
+            margin-left: 5px;
+            padding: 2px 5px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="landing-selector">
+        <label for="side-selector">View:</label>
+        <select id="side-selector">
+            <option value="groom">Groom's Side</option>
+            <option value="bride">Bride's Side</option>
+        </select>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1 id="header-title">Wedding Invitation</h1>
+            <p id="header-subtitle">We invite you to celebrate our special day</p>
+        </div>
+
+        <div class="invitation">
+            <h2>Invitation</h2>
+            <p id="inviter-text">Dengan segala hormatnya menjemput anda</p>
+            <p>ke majlis perkahwinan anak kami</p>
+            <h3 id="couple-names"></h3>
+            <p>pada</p>
+            <p><strong>29 Jun 2025</strong></p>
+            <p>di</p>
+            <p><strong>Bizmilla Event Hall, Iskandar Puteri</strong></p>
+            <p>Semoga dengan kehadiran serta iringan doa restu para undangan yang dihormati akan menyerikan lagi majlis kami. InsyaAllah.</p>
+            <p>Terima Kasih.</p>
+        </div>
+
+        <div class="details">
+            <div class="detail-card">
+                <h3>Jamuan</h3>
+                <p>11.00 AM - 4.00 PM</p>
+            </div>
+            <div class="detail-card">
+                <h3>Nikah</h3>
+                <p>11.00 AM</p>
+            </div>
+            <div class="detail-card">
+                <h3>Ketibaan Pengantin</h3>
+                <p>12.00 PM</p>
+            </div>
+        </div>
+
+        <div class="map-container">
+            <h3>Lokasi</h3>
+            <div class="map-responsive">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3650.9826294649984!2d103.61301847496597!3d1.4414121985450137!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da0b34b9cfb3b7%3A0xbe66b1b7d14eebbd!2sBizmilla%20Wedding%20Hall%20%40%20Iskandar%20Puteri!5e1!3m2!1sms!2smy!4v1741579385328!5m2!1sms!2smy" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+
+        <div class="rsvp-form" id="rsvp-form">
+            <h2>RSVP</h2>
+            <form id="wedding-rsvp-form">
+                <div class="form-group">
+                    <label for="guest-name">Nama:</label>
+                    <input type="text" id="guest-name" name="guest-name" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Kehadiran:</label>
+                    <div class="attendance-group">
+                        <div class="attendance-option">
+                            <input type="radio" id="attend" name="attendance" value="attend" checked>
+                            <label for="attend">Hadir</label>
+                        </div>
+                        <div class="attendance-option">
+                            <input type="radio" id="not-attend" name="attendance" value="not-attend">
+                            <label for="not-attend">Tidak Hadir</label>
+                        </div>
+                        <div class="attendance-option">
+                            <input type="radio" id="pending" name="attendance" value="pending">
+                            <label for="pending">Belum Pasti</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group" id="attendees-group">
+                    <label for="attendees">Bilangan Kehadiran (Maksimum 3):</label>
+                    <div class="number-stepper">
+                        <button type="button" class="stepper-btn" id="decrease-btn">-</button>
+                        <input type="number" class="stepper-input" id="attendees" name="attendees" value="1" min="1" max="3" readonly>
+                        <button type="button" class="stepper-btn" id="increase-btn">+</button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">Ucapan:</label>
+                    <textarea id="notes" name="notes"></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Hantar RSVP</button>
+            </form>
+        </div>
+
+        <div class="confirmation" id="confirmation">
+            <h2>Terima Kasih!</h2>
+            <p>RSVP anda telah diterima.</p>
+            <div id="confirmation-details">
+                <p><strong>Nama:</strong> <span id="confirm-name"></span></p>
+                <p><strong>Kehadiran:</strong> <span id="confirm-attendance"></span></p>
+                <p><strong>Bilangan:</strong> <span id="confirm-attendees"></span></p>
+                <p><strong>Ucapan:</strong> <span id="confirm-notes"></span></p>
+            </div>
+            <a href="#" class="add-calendar" id="add-calendar">Tambah ke Kalendar</a>
+        </div>
+
+        <div class="footer" id="footer">
+            <h3>Hubungi Kami</h3>
+            <div class="contact-info" id="contact-info">
+                <!-- Contact info will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Wedding details
+        const weddingDetails = {
+            groom: {
+                side: "groom",
+                title: "Wedding Invitation - Groom's Side",
+                subtitle: "We invite you to celebrate our special day",
+                inviter: "Saidah binti Hj Martan (wife to my late father - Mohamad Salleh Kassim)",
+                coupleNames: "Mohamad Amirul Hakim bin Mohamad Salleh & Hanani binti Masa'ud",
+                contacts: [
+                    { name: "Saidah binti Hj Martan", phone: "+60123456789" },
+                    { name: "Mohamad Amirul Hakim", phone: "+60123456789" }
+                ]
+            },
+            bride: {
+                side: "bride",
+                title: "Wedding Invitation - Bride's Side",
+                subtitle: "We invite you to celebrate our special day",
+                inviter: "Masa'ud bin Baharom & Fauziah binti Daman",
+                coupleNames: "Hanani binti Masa'ud & Mohamad Amirul Hakim bin Mohamad Salleh",
+                contacts: [
+                    { name: "Masa'ud bin Baharom", phone: "+60123456789" },
+                    { name: "Fauziah binti Daman", phone: "+60123456789" },
+                    { name: "Hanani binti Masa'ud", phone: "+60123456789" }
+                ]
+            }
+        };
+
+        // Get URL parameters to determine which side to show
+        const urlParams = new URLSearchParams(window.location.search);
+        const side = urlParams.get('side') || 'groom';
+        
+        // Set the initial side
+        document.getElementById('side-selector').value = side;
+        updateLandingPage(side);
+
+        // Update the landing page based on the selected side
+        function updateLandingPage(side) {
+            const details = weddingDetails[side];
+            
+            // Update page elements
+            document.getElementById('header-title').textContent = details.title;
+            document.getElementById('header-subtitle').textContent = details.subtitle;
+            document.getElementById('inviter-text').textContent = `Dengan segala hormatnya kami, ${details.inviter} menjemput anda`;
+            document.getElementById('couple-names').textContent = details.coupleNames;
+            
+            // Update contact info
+            const contactInfoContainer = document.getElementById('contact-info');
+            contactInfoContainer.innerHTML = '';
+            
+            details.contacts.forEach(contact => {
+                const contactElem = document.createElement('p');
+                contactElem.textContent = `${contact.name}: ${contact.phone}`;
+                contactInfoContainer.appendChild(contactElem);
+            });
+        }
+
+        // Listen for side selector changes
+        document.getElementById('side-selector').addEventListener('change', function() {
+            const selectedSide = this.value;
+            // Update URL parameter
+            const url = new URL(window.location);
+            url.searchParams.set('side', selectedSide);
+            window.history.pushState({}, '', url);
+            
+            // Update page content
+            updateLandingPage(selectedSide);
+        });
+
+        // Stepper functionality
+        const decreaseBtn = document.getElementById('decrease-btn');
+        const increaseBtn = document.getElementById('increase-btn');
+        const attendeesInput = document.getElementById('attendees');
+
+        decreaseBtn.addEventListener('click', function() {
+            const currentValue = parseInt(attendeesInput.value);
+            if (currentValue > 1) {
+                attendeesInput.value = currentValue - 1;
+                updateStepperButtons();
+            }
+        });
+
+        increaseBtn.addEventListener('click', function() {
+            const currentValue = parseInt(attendeesInput.value);
+            if (currentValue < 3) {
+                attendeesInput.value = currentValue + 1;
+                updateStepperButtons();
+            }
+        });
+
+        function updateStepperButtons() {
+            const currentValue = parseInt(attendeesInput.value);
+            decreaseBtn.disabled = currentValue <= 1;
+            increaseBtn.disabled = currentValue >= 3;
+        }
+
+        // Update attendees visibility based on attendance selection
+        const attendanceRadios = document.querySelectorAll('input[name="attendance"]');
+        const attendeesGroup = document.getElementById('attendees-group');
+
+        attendanceRadios.forEach(radio => {
+            radio.addEventListener('change', function() {
+                if (this.value === 'attend') {
+                    attendeesGroup.style.display = 'block';
+                } else {
+                    attendeesGroup.style.display = 'none';
+                }
+            });
+        });
+
+        // Form submission
+        const rsvpForm = document.getElementById('wedding-rsvp-form');
+        const confirmationSection = document.getElementById('confirmation');
+        const rsvpFormSection = document.getElementById('rsvp-form');
+
+        rsvpForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const guestName = document.getElementById('guest-name').value;
+            const attendance = document.querySelector('input[name="attendance"]:checked').value;
+            const attendees = attendance === 'attend' ? document.getElementById('attendees').value : '0';
+            const notes = document.getElementById('notes').value;
+            
+            // Display confirmation
+            document.getElementById('confirm-name').textContent = guestName;
+            document.getElementById('confirm-attendance').textContent = getAttendanceText(attendance);
+            document.getElementById('confirm-attendees').textContent = attendees;
+            document.getElementById('confirm-notes').textContent = notes || '-';
+            
+            // Hide form, show confirmation
+            rsvpFormSection.style.display = 'none';
+            confirmationSection.style.display = 'block';
+            
+            // Send data to Google Sheets (would need backend integration)
+            sendToGoogleSheets({
+                name: guestName,
+                attendance: attendance,
+                attendees: attendees,
+                notes: notes,
+                side: document.getElementById('side-selector').value
+            });
+        });
+
+        function getAttendanceText(value) {
+            switch(value) {
+                case 'attend': return 'Hadir';
+                case 'not-attend': return 'Tidak Hadir';
+                case 'pending': return 'Belum Pasti';
+                default: return '';
+            }
+        }
+
+        // Add to calendar functionality
+        document.getElementById('add-calendar').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Create calendar event details
+            const eventDetails = {
+                title: 'Wedding: ' + weddingDetails[document.getElementById('side-selector').value].coupleNames,
+                description: 'Wedding celebration at Bizmilla Event Hall',
+                location: 'Bizmilla Event Hall, Iskandar Puteri',
+                start: '2025-06-29T11:00:00',
+                end: '2025-06-29T16:00:00'
+            };
+            
+            // Google Calendar link
+            const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventDetails.title)}&dates=20250629T110000/20250629T160000&details=${encodeURIComponent(eventDetails.description)}&location=${encodeURIComponent(eventDetails.location)}`;
+            
+            // Open in a new tab
+            window.open(googleCalendarUrl, '_blank');
+        });
+
+        // Function to send data to Google Sheets (placeholder)
+        function sendToGoogleSheets(data) {
+            // This would be replaced with actual implementation
+            console.log('Sending to Google Sheets:', data);
+            
+            // For integration with Google Sheets, you would typically:
+            // 1. Set up a Google Apps Script as a web app
+            // 2. Make a fetch/ajax call to the published web app URL
+            // 3. The script would append the data to your Google Sheet
+            
+            // Example fetch call (not functional without proper endpoint):
+            /*
+            fetch('YOUR_GOOGLE_SCRIPT_WEB_APP_URL', {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => console.log('Success:', data))
+            .catch(error => console.error('Error:', error));
+            */
+        }
+
+        // Initialize the stepper buttons state
+        updateStepperButtons();
+    </script>
+</body>
+</html>
