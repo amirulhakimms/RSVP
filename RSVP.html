@@ -351,6 +351,43 @@
             padding: 2px 5px;
             border-radius: 4px;
         }
+        
+        /* Loading spinner */
+        .spinner {
+            display: none;
+            margin: 20px auto;
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            border-top-color: var(--primary-color);
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Form submission status */
+        .status-message {
+            text-align: center;
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 4px;
+            display: none;
+        }
+        
+        .status-success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .status-error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
     </style>
 </head>
 <body>
@@ -443,7 +480,10 @@
                     <textarea id="notes" name="notes"></textarea>
                 </div>
 
-                <button type="submit" class="submit-btn">Hantar RSVP</button>
+                <div id="status-message" class="status-message"></div>
+                <div id="spinner" class="spinner"></div>
+                
+                <button type="submit" class="submit-btn" id="submit-btn">Hantar RSVP</button>
             </form>
         </div>
 
@@ -581,9 +621,17 @@
         const rsvpForm = document.getElementById('wedding-rsvp-form');
         const confirmationSection = document.getElementById('confirmation');
         const rsvpFormSection = document.getElementById('rsvp-form');
+        const spinner = document.getElementById('spinner');
+        const statusMessage = document.getElementById('status-message');
+        const submitBtn = document.getElementById('submit-btn');
 
         rsvpForm.addEventListener('submit', function(e) {
             e.preventDefault();
+            
+            // Show spinner, disable submit button
+            spinner.style.display = 'block';
+            submitBtn.disabled = true;
+            statusMessage.style.display = 'none';
             
             // Get form values
             const guestName = document.getElementById('guest-name').value;
@@ -591,24 +639,41 @@
             const attendees = attendance === 'attend' ? document.getElementById('attendees').value : '0';
             const notes = document.getElementById('notes').value;
             
-            // Display confirmation
-            document.getElementById('confirm-name').textContent = guestName;
-            document.getElementById('confirm-attendance').textContent = getAttendanceText(attendance);
-            document.getElementById('confirm-attendees').textContent = attendees;
-            document.getElementById('confirm-notes').textContent = notes || '-';
-            
-            // Hide form, show confirmation
-            rsvpFormSection.style.display = 'none';
-            confirmationSection.style.display = 'block';
-            
-            // Send data to Google Sheets (would need backend integration)
-            sendToGoogleSheets({
+            // Send data to Google Sheets
+            const formData = {
                 name: guestName,
                 attendance: attendance,
                 attendees: attendees,
                 notes: notes,
                 side: document.getElementById('side-selector').value
-            });
+            };
+            
+            sendToGoogleSheets(formData)
+                .then(response => {
+                    // Hide spinner
+                    spinner.style.display = 'none';
+                    
+                    // If successful, show confirmation
+                    document.getElementById('confirm-name').textContent = guestName;
+                    document.getElementById('confirm-attendance').textContent = getAttendanceText(attendance);
+                    document.getElementById('confirm-attendees').textContent = attendees;
+                    document.getElementById('confirm-notes').textContent = notes || '-';
+                    
+                    // Hide form, show confirmation
+                    rsvpFormSection.style.display = 'none';
+                    confirmationSection.style.display = 'block';
+                })
+                .catch(error => {
+                    // Hide spinner, re-enable submit button
+                    spinner.style.display = 'none';
+                    submitBtn.disabled = false;
+                    
+                    // Show error message
+                    statusMessage.textContent = 'Terdapat masalah dengan penyerahan RSVP. Sila cuba lagi.';
+                    statusMessage.className = 'status-message status-error';
+                    statusMessage.style.display = 'block';
+                    console.error('Error:', error);
+                });
         });
 
         function getAttendanceText(value) {
@@ -618,6 +683,26 @@
                 case 'pending': return 'Belum Pasti';
                 default: return '';
             }
+        }
+
+        // Function to send data to Google Sheets
+        async function sendToGoogleSheets(data) {
+            // Replace with your actual web app URL from the Google Apps Script deployment
+            const googleScriptUrl = 'https://script.google.com/macros/s/AKfycbxHpvYsvuHTK_eTyvfuRcEstg7XO9qLZRgAOxOr2j_-SSMT5L0w12Bj2co5HO0gk8Iq/exec';
+            
+            const response = await fetch(googleScriptUrl, {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+            
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            
+            return response.text();
         }
 
         // Add to calendar functionality
@@ -639,31 +724,6 @@
             // Open in a new tab
             window.open(googleCalendarUrl, '_blank');
         });
-
-        // Function to send data to Google Sheets (placeholder)
-        function sendToGoogleSheets(data) {
-            // This would be replaced with actual implementation
-            console.log('Sending to Google Sheets:', data);
-            
-            // For integration with Google Sheets, you would typically:
-            // 1. Set up a Google Apps Script as a web app
-            // 2. Make a fetch/ajax call to the published web app URL
-            // 3. The script would append the data to your Google Sheet
-            
-            // Example fetch call (not functional without proper endpoint):
-            /*
-            fetch('YOUR_GOOGLE_SCRIPT_WEB_APP_URL', {
-                method: 'POST',
-                body: JSON.stringify(data),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-            .then(response => response.json())
-            .then(data => console.log('Success:', data))
-            .catch(error => console.error('Error:', error));
-            */
-        }
 
         // Initialize the stepper buttons state
         updateStepperButtons();
