@@ -1,0 +1,583 @@
+<!doctype html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <script type="importmap" data-framer-importmap>{"imports":{"__framer-badge":"https://framerusercontent.com/modules/kr6mBIQPAjMiv35rQa3A/pERRjHDPh9IxXAn0rVsJ/PX9hIOIVM.js","__framer-not-found-page":"https://framer.com/m/framer/SitesNotFoundPage.js@1.4.0","@emotion/hash":"https://ga.jspm.io/npm:@emotion/hash@0.9.1/dist/emotion-hash.esm.js","@motionone/dom":"https://ga.jspm.io/npm:@motionone/dom@10.12.0/dist/index.es.js","@motionone/easing":"https://ga.jspm.io/npm:@motionone/easing@10.14.0/dist/index.es.js","@motionone/utils":"https://ga.jspm.io/npm:@motionone/utils@10.12.0/dist/index.es.js","@react-three/drei":"https://ga.jspm.io/npm:@react-three/drei@8.3.1/index.js","@react-three/fiber":"https://ga.jspm.io/npm:@react-three/fiber@7.0.24/dist/react-three-fiber.esm.js","airtable":"https://ga.jspm.io/npm:airtable@0.11.1/lib/airtable.js","canvas":"https://ga.jspm.io/npm:canvas@3.1.0/browser.js","canvas-confetti":"https://ga.jspm.io/npm:canvas-confetti@1.4.0/src/confetti.js","color-diff":"https://ga.jspm.io/npm:color-diff@1.2.0/lib/index.js","color-hash":"https://ga.jspm.io/npm:color-hash@2.0.1/dist/color-hash.js","framer-motion-3d":"https://ga.jspm.io/npm:framer-motion-3d@6.0.0-beta.8/dist/es/index.mjs","framesync":"https://ga.jspm.io/npm:framesync@6.1.2/dist/es/index.mjs","hsluv":"https://ga.jspm.io/npm:hsluv@1.0.0/dist/esm/hsluv.js","motion":"https://ga.jspm.io/npm:motion@10.12.0/dist/main.es.js","popmotion":"https://ga.jspm.io/npm:popmotion@11.0.5/dist/es/index.mjs","react-confetti":"https://ga.jspm.io/npm:react-confetti@6.0.1/dist/react-confetti.min.js","shopify-buy":"https://ga.jspm.io/npm:shopify-buy@2.14.0/index.js","style-value-types":"https://ga.jspm.io/npm:style-value-types@5.1.0/dist/es/index.mjs","three":"https://ga.jspm.io/npm:three@0.136.0/build/three.module.js","tinycolor2":"https://ga.jspm.io/npm:tinycolor2@1.4.2/tinycolor.js","valtio":"https://ga.jspm.io/npm:valtio@1.2.9/esm/index.js","zustand":"https://ga.jspm.io/npm:zustand@3.7.1/esm/index.js","zustand/middleware":"https://ga.jspm.io/npm:zustand@3.7.1/esm/middleware.js","#framer/local/canvasComponent/BQNd7Rjq0/BQNd7Rjq0.js":"https://framerusercontent.com/modules/RzAkIVO06yKbsKP8enfN/w9KC2CIMBiwR5Fsj65uQ/BQNd7Rjq0.js","#framer/local/canvasComponent/C1mLTG5n8/C1mLTG5n8.js":"https://framerusercontent.com/modules/HFwLNtvtIL9BBSG7QIwu/0VE6FFkwG5dXkalc8Gcy/C1mLTG5n8.js","#framer/local/canvasComponent/EYXsHBKyu/EYXsHBKyu.js":"https://framerusercontent.com/modules/68oHVMK08iwupv0yGgSc/sIMyf8D9cOah4mJKli5s/EYXsHBKyu.js","#framer/local/canvasComponent/jlcuXSSnb/jlcuXSSnb.js":"https://framerusercontent.com/modules/FA1o7UiuCjZcvBeptox8/2Ugb2Z4784LO4RNzpQkK/jlcuXSSnb.js","#framer/local/canvasComponent/kbAfkDfri/kbAfkDfri.js":"https://framerusercontent.com/modules/8P6EM5dYX1QtAX40Bges/SLY5zFVr0EHWTMtDdHmd/kbAfkDfri.js","#framer/local/canvasComponent/MbrsJ7ATk/MbrsJ7ATk.js":"https://framerusercontent.com/modules/exNBZ9Hxq8Oim66iYfsj/7RfDVnq7o6pzYj677djX/MbrsJ7ATk.js","#framer/local/canvasComponent/sD_ip8Ugz/sD_ip8Ugz.js":"https://framerusercontent.com/modules/nuRixijbzWW1h5SPyCTc/cwmS0tdGjztPxVWu6DaL/sD_ip8Ugz.js","#framer/local/canvasComponent/slGIVV_sv/slGIVV_sv.js":"https://framerusercontent.com/modules/69vIwvNwzXszOf1l2D52/wBmJJS9i3vdJdeyOlG3L/slGIVV_sv.js","#framer/local/canvasComponent/sMUbfU15n/sMUbfU15n.js":"https://framerusercontent.com/modules/O7JR0E6QRb6bCsfHvHKJ/Xm9kmJaMSmr6ImruFL0j/sMUbfU15n.js","#framer/local/canvasComponent/v0c8ueQjX/v0c8ueQjX.js":"https://framerusercontent.com/modules/QhbstaIrKB0DkaYSYetU/lNxoRtMFKIJPJSnh7tAE/v0c8ueQjX.js","#framer/local/canvasComponent/x8CmArQxY/x8CmArQxY.js":"https://framerusercontent.com/modules/QPBCzw2KOGhChGaRCaqZ/vL5I5qV4Ye5al6TZlnuo/x8CmArQxY.js","#framer/local/collection/AQeHu2jJT/AQeHu2jJT.js":"https://framerusercontent.com/modules/9HOSjGXcj2Hm9KvknSHR/MFHxW1JQgfR2iAnyibT7/AQeHu2jJT.js","#framer/local/collection/gZpnNqT0V/gZpnNqT0V.js":"https://framerusercontent.com/modules/e2rtvBFHmjtb1UpJ1x7W/az4AXBEGaAvevKQVEybf/gZpnNqT0V.js","#framer/local/collection/zKkxXkA54/zKkxXkA54.js":"https://framerusercontent.com/modules/WL7873x8IO7t41xrlj6F/byJoMnwoDLmVAaBkRKT5/zKkxXkA54.js","#framer/local/componentPresets/componentPresets/componentPresets.js":"https://framerusercontent.com/modules/lb8CHNtMKsJFUY6shB5b/6fIehQ233gPNztHPGMsX/componentPresets.js","#framer/local/css/b5peZU444/b5peZU444.js":"https://framerusercontent.com/modules/GHZfGxU2S5HVP4YtAZKL/VbSN8mT2EnR6zNZyY1t5/b5peZU444.js","#framer/local/css/e_pX1KNAA/e_pX1KNAA.js":"https://framerusercontent.com/modules/3kNaWoglRNEEDb9o07lT/ZNs60kieqNokimOHWR8K/e_pX1KNAA.js","#framer/local/css/jcFxERO72/jcFxERO72.js":"https://framerusercontent.com/modules/U8rs8yFGCqqg9osWv1Ik/up6wHcKFJHwtHuj7DI5Q/jcFxERO72.js","#framer/local/css/kZPFG09r4/kZPFG09r4.js":"https://framerusercontent.com/modules/gf0IPlsQCUc25ENvGpT3/gya7gpdGPnJizTMwIfO4/kZPFG09r4.js","#framer/local/css/MlfmIc8Y9/MlfmIc8Y9.js":"https://framerusercontent.com/modules/AShLZwtCDJ2ptoySGU8N/Yej5s8kkzdyDehO9HIXm/MlfmIc8Y9.js","#framer/local/css/OM2GJtKzX/OM2GJtKzX.js":"https://framerusercontent.com/modules/TptWtxzGbsYBSNYD0DwW/RBeqbQQ67jAH4cByj3Zu/OM2GJtKzX.js","#framer/local/css/SndlxoRXv/SndlxoRXv.js":"https://framerusercontent.com/modules/R9xEtZZ0LQ2FGmKa20Sz/cKxBEHQqntRkJ3i5Od8n/SndlxoRXv.js","#framer/local/css/Tp_rMG0CB/Tp_rMG0CB.js":"https://framerusercontent.com/modules/oj5SLFdzoNqjIrC9FEUe/o7bF9gYHPSa19yyh2bzR/Tp_rMG0CB.js","#framer/local/css/UthZp26e2/UthZp26e2.js":"https://framerusercontent.com/modules/C3qYcnH4WfPl4uO4kM7j/YdX51rKnZxAIS9al5Cjj/UthZp26e2.js","#framer/local/css/VyRhdEDCj/VyRhdEDCj.js":"https://framerusercontent.com/modules/XMjGSRyx8hoPbSyK0QKv/FKXlcKHe8IiGAll0r63e/VyRhdEDCj.js","#framer/local/css/ylKVdrHtl/ylKVdrHtl.js":"https://framerusercontent.com/modules/zLW98WwJBoLNESVX3Ylx/rlYPzfpsuvBh85mTBGD0/ylKVdrHtl.js","#framer/local/screen/augiA20Il/augiA20Il.js":"https://framerusercontent.com/modules/kYwO6uNac53wcER9wUSS/zmKwLm3m0GMJ4uJewId1/augiA20Il.js","#framer/local/screen/b9tvlXzeB/b9tvlXzeB.js":"https://framerusercontent.com/modules/3xZsMKA19QohkI2JaoX7/yP4LcSBD40U0bP4zdyQN/b9tvlXzeB.js","#framer/local/screen/eSzElrCOF/eSzElrCOF.js":"https://framerusercontent.com/modules/2fUmmXiWM5Dj6PZpXru9/ZNRfHl4iEpuKXtWelFjB/eSzElrCOF.js","#framer/local/screen/lJEaM3Wpn/lJEaM3Wpn.js":"https://framerusercontent.com/modules/iz7RsQg3YA5fBBh48day/b1JuJoLRNLTgxjezqzCY/lJEaM3Wpn.js","#framer/local/screen/PR_PrU4to/PR_PrU4to.js":"https://framerusercontent.com/modules/fjKxVJ2zV5wJxwzc6MZa/gwodCAsEfXuGjKH7oQsb/PR_PrU4to.js","#framer/local/screen/qd9xiOS8Y/qd9xiOS8Y.js":"https://framerusercontent.com/modules/So0Ai4KDOgk78qUv5hX6/uz8fUFc8w8vTweaOMbd4/qd9xiOS8Y.js","#framer/local/screen/ZQT0u0Xsk/ZQT0u0Xsk.js":"https://framerusercontent.com/modules/mFbYrkx4BQ1nLC9vll6C/Ix02Jkb07R9mhOJV6Rp2/ZQT0u0Xsk.js","#framer/local/siteMetadata/siteMetadata/siteMetadata.js":"https://framerusercontent.com/modules/faUFBBkFVMunwf4Z45rs/KxIr1PevCVF30NtkJTXi/siteMetadata.js","#framer/local/codeFile/pYum8yc/Arraytest.js":"https://framerusercontent.com/modules/UEKb6FNwgYTL07NK3ZhB/WElLoGWeRNpNkkguYzYl/Arraytest.js","#framer/local/codeFile/WdcDYdU/DynamicList.js":"https://framerusercontent.com/modules/JT6rXEZwEUaJB74nx4J5/02s59xdTDwjnLLwJH7g5/DynamicList.js","#framer/local/codeFile/Xdafgdr/Countdown_1.js":"https://framerusercontent.com/modules/b7us4dLHxE2QLj309JPm/MeaD8qJDEovgr15gZoFh/Countdown_1.js","#framer/local/codeFile/U26xzor/Countdown.js":"https://framerusercontent.com/modules/v1ThlI2a6ka1wJK9KpuG/Mdin8N8Fb27nHjewlNXW/Countdown.js","#framer/local/codeFile/m1IH3Tc/Form.js":"https://framerusercontent.com/modules/hqrQBFFCur6hJ6tG37AT/92xuFHLq0ERwluXZrwoc/Form.js","#framer/local/codeFile/FUuxc6Q/Examples.js":"https://framerusercontent.com/modules/5Do4JAJXqLLBO7i17Ivp/Zxdb3HhcEXKPuQDpI3UO/Examples.js","#framer/local/codeFile/RyY3Z9x/ListItemComponent.js":"https://framerusercontent.com/modules/rNI9aFSO7TqSauRWBMjx/1ntyssScUy4aizwCeDDu/ListItemComponent.js","#framer/local/codeFile/MDV_KOQ/rsvp_final.js":"https://framerusercontent.com/modules/MqCJvsRrkoBuoiJPVYhZ/9LVo6Bv30ROU4UUnEPfk/rsvp_final.js","#framer/local/codeFile/uMRdDUv/SimpleTest.js":"https://framerusercontent.com/modules/2Wjn5cnojS7JytmzJtih/uFpHa0Y1EJLQbcxZ9jBt/SimpleTest.js","#framer/local/codeFile/nFb9Gml/rsvp_final_1bkp.js":"https://framerusercontent.com/modules/XjzOsreGnfQCj2sks0xP/4DkGF2HOLh2Ew4PHx0aE/rsvp_final_1bkp.js","#framer/local/codeFile/QmwB0xI/Test_2.js":"https://framerusercontent.com/modules/6WGQSf6qH64mvOsjDi6C/tjAzSIp6espVpu7uSEJG/Test_2.js","#framer/local/codeFile/vG7sRC6/ListFromSheet.js":"https://framerusercontent.com/modules/4loBb89oTkS86Bpkkh4S/tj7eJfRkmbC6PLYLP6zb/ListFromSheet.js","#framer/local/codeFile/y5unUTX/Test_4.js":"https://framerusercontent.com/modules/IdukVm9Pm6vxbYLeRMZQ/JpKkSaCE3Eg8javz4ahO/Test_4.js","#framer/local/codeFile/U6Ppp3x/rsvp_final_1.js":"https://framerusercontent.com/modules/691N7qr6FwQQ5nd5ojLc/QiNBP2EFNwRUcgrTgsSf/rsvp_final_1.js","#framer/local/codeFile/AAN_RSt/Test.js":"https://framerusercontent.com/modules/hl1ODABa3jNBJrPp8fYj/C8qKb7sGZ0egeP6YRGUC/Test.js","#framer/local/codeFile/OSqIqHW/Test_3.js":"https://framerusercontent.com/modules/1lsVJ0GpJ6yJkqyKflob/iyssDkX74FuZ6F06K3fi/Test_3.js","#framer/local/codeFile/nvGBqLf/Ucapan.js":"https://framerusercontent.com/modules/rquqt2ppXQSeet8CpdCl/A0xqO69C5DGQwJ3DSRov/Ucapan.js","#framer/local/webPageMetadata/qd9xiOS8Y/qd9xiOS8Y.js":"https://framerusercontent.com/modules/5LB9J1c3pcFNSqHsHO1X/5s9z9KZlSON4B0VVcqHX/qd9xiOS8Y.js","#framer/local/webPageMetadata/eSzElrCOF/eSzElrCOF.js":"https://framerusercontent.com/modules/bekoCRgGTEYAq945A0rK/bydoFT6IPV9juzSHd8jt/eSzElrCOF.js","#framer/local/webPageMetadata/b9tvlXzeB/b9tvlXzeB.js":"https://framerusercontent.com/modules/sJF9aSJoJhGbzdSAZ00J/iYTSmrgeGq8KtqUZZBUf/b9tvlXzeB.js","#framer/local/webPageMetadata/PR_PrU4to/PR_PrU4to.js":"https://framerusercontent.com/modules/36j2edhb8VNYAlk83yOU/KENt4RmuJSqqaREgjE8c/PR_PrU4to.js","#framer/local/webPageMetadata/lJEaM3Wpn/lJEaM3Wpn.js":"https://framerusercontent.com/modules/LEUVy4AghIxRa9qz9d6x/t9AitIlAoXi2gVgcKGmA/lJEaM3Wpn.js","#framer/local/webPageMetadata/ZQT0u0Xsk/ZQT0u0Xsk.js":"https://framerusercontent.com/modules/BBzFyxcVaZwXl45z0M0P/FhsBMTCAy8xNzrAQI5GC/ZQT0u0Xsk.js","#framer/local/codeFile/EgiW940/GiftReservationFlow_1.js":"https://framerusercontent.com/modules/dQ2QsuU402KqdWi8avO9/Tw6v2VB3EqDfYzEKIe4j/GiftReservationFlow_1.js","#framer/local/codeFile/kMYYJXX/GiftReservationFlow.js":"https://framerusercontent.com/modules/VEihxLiAY4crdkxf05u0/QdiIgzDHwTTBx89eZBrU/GiftReservationFlow.js","#framer/local/codeFile/wuOOb2z/ScrollableList.js":"https://framerusercontent.com/modules/96UIMnlO0iSAWnDBySxq/7PaGMpwu6FTOkxbCvuHH/ScrollableList.js","#framer/local/webPageMetadata/augiA20Il/augiA20Il.js":"https://framerusercontent.com/modules/xaqvjyPHfFUz8TCqIBg8/7hUlyYng19xEG0Ry23nl/augiA20Il.js","#framer/local/canvasComponent/Z64jLFIqO/Z64jLFIqO.js":"https://framerusercontent.com/modules/lkByqJz2qPlwCav78aMc/WBK9naS3tKE6DY0zmOK1/Z64jLFIqO.js","#framer/local/canvasComponent/C14wzNpBw/C14wzNpBw.js":"https://framerusercontent.com/modules/YcdUgw2mOr4owt9nxDkU/rBHs9gb3Yp1nLtNuAHKD/C14wzNpBw.js","#framer/local/codeFile/bbhXiUe/Wishlist.js":"https://framerusercontent.com/modules/bOrOYryYvnmWbeoRYAwb/YSxeDaCzvA92LjnW83mb/Wishlist.js","#framer/local/codeFile/l8F94KM/Wishlist.js":"https://framerusercontent.com/modules/dtpfQG5ZFHD459vmVcZI/QZQgAUx32MOwpds7LmQV/Wishlist.js","framer":"https://app.framerstatic.com/framer.EIKPCYI5.mjs","framer-motion":"https://app.framerstatic.com/framer-motion.57ESMITV.mjs","react":"https://ga.jspm.io/npm:react@18.2.0/index.js","react-dom":"https://ga.jspm.io/npm:react-dom@18.2.0/index.js","react-dom/client":"https://ga.jspm.io/npm:react-dom@18.2.0/client.js","react-dom/server":"https://ga.jspm.io/npm:react-dom@18.2.0/server.browser.js","react/jsx-runtime":"https://ga.jspm.io/npm:react@18.2.0/jsx-runtime.js"},"scopes":{"https://ga.jspm.io/":{"@babel/runtime/helpers/esm/defineProperty":"https://ga.jspm.io/npm:@babel/runtime@7.16.7/helpers/esm/defineProperty.js","@babel/runtime/helpers/esm/extends":"https://ga.jspm.io/npm:@babel/runtime@7.16.7/helpers/esm/extends.js","@chevrotain/utils":"https://ga.jspm.io/npm:@chevrotain/utils@9.1.0/lib/src/api.js","@motionone/animation":"https://ga.jspm.io/npm:@motionone/animation@10.12.0/dist/index.es.js","@motionone/easing":"https://ga.jspm.io/npm:@motionone/easing@10.12.0/dist/index.es.js","@motionone/generators":"https://ga.jspm.io/npm:@motionone/generators@10.12.0/dist/index.es.js","@motionone/types":"https://ga.jspm.io/npm:@motionone/types@10.12.0/dist/index.es.js","@motionone/utils":"https://ga.jspm.io/npm:@motionone/utils@10.14.0/dist/index.es.js","@react-spring/animated":"https://ga.jspm.io/npm:@react-spring/animated@9.4.1/dist/react-spring-animated.esm.js","@react-spring/core":"https://ga.jspm.io/npm:@react-spring/core@9.4.1/dist/react-spring-core.esm.js","@react-spring/rafz":"https://ga.jspm.io/npm:@react-spring/rafz@9.4.1/dist/react-spring-rafz.esm.js","@react-spring/shared":"https://ga.jspm.io/npm:@react-spring/shared@9.4.1/dist/react-spring-shared.esm.js","@react-spring/three":"https://ga.jspm.io/npm:@react-spring/three@9.4.1/dist/react-spring-three.esm.js","@react-spring/types/animated":"https://ga.jspm.io/npm:@react-spring/types@9.4.1/animated.js","@react-spring/types/interpolation":"https://ga.jspm.io/npm:@react-spring/types@9.4.1/interpolation.js","@use-gesture/core":"https://ga.jspm.io/npm:@use-gesture/core@10.2.4/dist/use-gesture-core.esm.js","@use-gesture/core/actions":"https://ga.jspm.io/npm:@use-gesture/core@10.2.4/actions/dist/use-gesture-core-actions.esm.js","@use-gesture/core/types":"https://ga.jspm.io/npm:@use-gesture/core@10.2.4/types/dist/use-gesture-core-types.esm.js","@use-gesture/core/utils":"https://ga.jspm.io/npm:@use-gesture/core@10.2.4/utils/dist/use-gesture-core-utils.esm.js","@use-gesture/react":"https://ga.jspm.io/npm:@use-gesture/react@10.2.4/dist/use-gesture-react.esm.js","abort-controller":"https://ga.jspm.io/npm:abort-controller@3.0.0/browser.js","abortcontroller-polyfill/dist/cjs-ponyfill":"https://ga.jspm.io/npm:abortcontroller-polyfill@1.7.3/dist/cjs-ponyfill.js","bidi-js":"https://ga.jspm.io/npm:bidi-js@1.0.2/dist/bidi.js","buffer":"https://ga.jspm.io/npm:@jspm/core@2.0.0-beta.14/nodelibs/browser/buffer.js","chevrotain":"https://ga.jspm.io/npm:chevrotain@9.1.0/lib_esm/api_esm.mjs","debounce":"https://ga.jspm.io/npm:debounce@1.2.1/index.js","detect-gpu":"https://ga.jspm.io/npm:detect-gpu@3.1.30/dist/detect-gpu.esm.js","fast-deep-equal":"https://ga.jspm.io/npm:fast-deep-equal@3.1.3/index.js","fflate":"https://ga.jspm.io/npm:fflate@0.6.10/esm/browser.js","hey-listen":"https://ga.jspm.io/npm:hey-listen@1.0.8/dist/index.js","ktx-parse":"https://ga.jspm.io/npm:ktx-parse@0.2.2/dist/ktx-parse.modern.js","lodash.omit":"https://ga.jspm.io/npm:lodash.omit@4.5.0/index.js","lodash.pick":"https://ga.jspm.io/npm:lodash.pick@4.4.0/index.js","lodash/get":"https://ga.jspm.io/npm:lodash@4.17.21/get.js","lodash/isArray":"https://ga.jspm.io/npm:lodash@4.17.21/isArray.js","lodash/isFunction":"https://ga.jspm.io/npm:lodash@4.17.21/isFunction.js","lodash/isNil":"https://ga.jspm.io/npm:lodash@4.17.21/isNil.js","lodash/isNumber":"https://ga.jspm.io/npm:lodash@4.17.21/isNumber.js","lodash/isPlainObject":"https://ga.jspm.io/npm:lodash@4.17.21/isPlainObject.js","lodash/isString":"https://ga.jspm.io/npm:lodash@4.17.21/isString.js","lodash/keys":"https://ga.jspm.io/npm:lodash@4.17.21/keys.js","mmd-parser":"https://ga.jspm.io/npm:mmd-parser@1.0.4/build/mmdparser.js","node-fetch":"https://ga.jspm.io/npm:node-fetch@2.6.7/browser.js","object-assign":"https://ga.jspm.io/npm:object-assign@4.1.1/index.js","opentype.js":"https://ga.jspm.io/npm:opentype.js@1.3.4/dist/opentype.module.js","popmotion":"https://ga.jspm.io/npm:popmotion@11.0.3/dist/es/index.mjs","potpack":"https://ga.jspm.io/npm:potpack@1.0.2/index.mjs","process":"https://framer.com/m/framer/empty.js@0.1.0","prop-types":"https://ga.jspm.io/npm:prop-types@15.8.0/index.js","proxy-compare":"https://ga.jspm.io/npm:proxy-compare@2.0.2/dist/index.modern.js","react-composer":"https://ga.jspm.io/npm:react-composer@5.0.2/es/index.js","react-merge-refs":"https://ga.jspm.io/npm:react-merge-refs@1.1.0/dist/react-merge-refs.esm.js","react-reconciler":"https://ga.jspm.io/npm:react-reconciler@0.26.2/index.js","react-use-measure":"https://ga.jspm.io/npm:react-use-measure@2.1.1/dist/web.js","regexp-to-ast":"https://ga.jspm.io/npm:regexp-to-ast@0.5.0/lib/regexp-to-ast.js","scheduler":"https://ga.jspm.io/npm:scheduler@0.23.0/index.js","style-value-types":"https://ga.jspm.io/npm:style-value-types@5.1.2/dist/es/index.mjs","three-mesh-bvh":"https://ga.jspm.io/npm:three-mesh-bvh@0.5.3/src/index.js","three-stdlib":"https://ga.jspm.io/npm:three-stdlib@2.6.4/index.js","three/examples/js/libs/stats.min":"https://ga.jspm.io/npm:three@0.136.0/examples/js/libs/stats.min.js","troika-three-text":"https://ga.jspm.io/npm:troika-three-text@0.44.0/dist/troika-three-text.esm.js","troika-three-utils":"https://ga.jspm.io/npm:troika-three-utils@0.44.0/dist/troika-three-utils.esm.js","troika-worker-utils":"https://ga.jspm.io/npm:troika-worker-utils@0.44.0/dist/troika-worker-utils.esm.js","tslib":"https://ga.jspm.io/npm:tslib@2.4.0/tslib.es6.js","use-asset":"https://ga.jspm.io/npm:use-asset@1.0.4/dist/index.cjs.js","valtio/vanilla":"https://ga.jspm.io/npm:valtio@1.2.9/esm/vanilla.js","zstddec":"https://ga.jspm.io/npm:zstddec@0.0.2/dist/zstddec.js","zustand":"https://ga.jspm.io/npm:zustand@3.6.8/esm/index.js","fs":"https://framer.com/m/framer/empty.js@0.1.0"},"https://ga.jspm.io/npm:framer-motion-3d@6.0.0-beta.8/":{"tslib":"https://ga.jspm.io/npm:tslib@2.3.1/tslib.es6.js"}}}</script>
+    <script async src="https://ga.jspm.io/npm:es-module-shims@1.6.3/dist/es-module-shims.js" crossorigin="anonymous" data-framer-es-module-shims></script>
+    
+    
+    
+    
+    <meta name="viewport" content="width=device-width">
+    <meta name="generator" content="Framer bf2ee14">
+    <title>Amirul Hanani Wedding</title>
+    <meta name="description" content="Majlis perkahwinan Amirul dan Hanani" />
+    <meta name="framer-search-index" content="indexing">
+    <link href="https://framerusercontent.com/images/8JMQCoz8yksF01phvt43mpPYmY.svg" rel="icon" media="(prefers-color-scheme: light)">
+    <link href="https://framerusercontent.com/images/uJBG4qg6zruWaKG3W0tGYHHowM.svg" rel="icon" media="(prefers-color-scheme: dark)">
+    <link rel="apple-touch-icon" href="https://framerusercontent.com/images/WM4duA2MhLjaRwDvkFzna1VrkhE.png"/>
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Amirul Hanani Wedding">
+    <meta property="og:description" content="Majlis perkahwinan Amirul dan Hanani">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Amirul Hanani Wedding">
+    <meta name="twitter:description" content="Majlis perkahwinan Amirul dan Hanani">
+    <style data-framer-css-ssr>
+        html, body, #main {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        * {
+            box-sizing: border-box;
+            -webkit-font-smoothing: inherit;
+        }
+        h1, h2, h3, h4, h5, h6, p, figure {
+            margin: 0;
+        }
+        body, input, textarea, select, button { font-size: 12px; font-family: sans-serif; }
+        body { --token-111d13e0-fca6-49f1-a960-128e58b0e900: rgb(22, 58, 29);--token-b632af5e-dbac-438c-b914-eef73c0deb87: rgb(21, 66, 34);--token-70d1e61c-6e23-413c-9f8e-85f7a562d679: rgb(94, 56, 18);--token-b2975046-dd4f-47ef-8a52-a3dcf27a0040: rgb(251, 251, 233);--token-9133619a-fa5b-4cef-9cae-cfe228684b95: rgb(9, 28, 13);--token-f418b239-addf-494d-8534-b563ea41ded7: rgb(125, 184, 138); @supports (color: color(display-p3 1 1 1)) {  } }
+@media (prefers-color-scheme: dark) { body {  @supports (color: color(display-p3 1 1 1)) {  } } }
+        
+        #__framer-badge-container {
+            position: fixed;
+            bottom: 0;
+            padding: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: right;
+            pointer-events: none;
+            z-index: 314159;
+        }
+        .__framer-badge { pointer-events: auto; }
+        /* latin-ext */
+@font-face {
+  font-family: 'Instrument Sans';
+  font-style: italic;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/instrumentsans/v1/pxitypc9vsFDm051Uf6KVwgkfoSbSnNPooZAN0lInHGpCWNu2ZGRu3k.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Instrument Sans';
+  font-style: italic;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/instrumentsans/v1/pxitypc9vsFDm051Uf6KVwgkfoSbSnNPooZAN0lInHGpCWNu15GR.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Instrument Sans';
+  font-style: italic;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/instrumentsans/v1/pxitypc9vsFDm051Uf6KVwgkfoSbSnNPooZAN0lInHGpCWNu2ZGRu3k.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Instrument Sans';
+  font-style: italic;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/instrumentsans/v1/pxitypc9vsFDm051Uf6KVwgkfoSbSnNPooZAN0lInHGpCWNu15GR.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Instrument Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/instrumentsans/v1/pxiTypc9vsFDm051Uf6KVwgkfoSxQ0GsQv8ToedPibnr0She1YmV.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Instrument Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/instrumentsans/v1/pxiTypc9vsFDm051Uf6KVwgkfoSxQ0GsQv8ToedPibnr0SZe1Q.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Instrument Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/instrumentsans/v1/pxiTypc9vsFDm051Uf6KVwgkfoSxQ0GsQv8ToedPibnr0She1YmV.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Instrument Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/instrumentsans/v1/pxiTypc9vsFDm051Uf6KVwgkfoSxQ0GsQv8ToedPibnr0SZe1Q.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* devanagari */
+@font-face {
+  font-family: 'Tiro Devanagari Hindi';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/tirodevanagarihindi/v5/55xyezN7P8T4e0_CfIJrwdodg9HoYw0i-M9vTuMPTG0.woff2) format('woff2');
+  unicode-range: U+0900-097F, U+1CD0-1CF9, U+200C-200D, U+20A8, U+20B9, U+20F0, U+25CC, U+A830-A839, U+A8E0-A8FF, U+11B00-11B09;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Tiro Devanagari Hindi';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/tirodevanagarihindi/v5/55xyezN7P8T4e0_CfIJrwdodg9HoYw0i-M9vQeMPTG0.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Tiro Devanagari Hindi';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/tirodevanagarihindi/v5/55xyezN7P8T4e0_CfIJrwdodg9HoYw0i-M9vT-MP.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Fragment Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/fragmentmono/v4/4iCr6K5wfMRRjxp0DA6-2CLnB45HhrUI.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Fragment Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/fragmentmono/v4/4iCr6K5wfMRRjxp0DA6-2CLnB41HhrUI.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Fragment Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/fragmentmono/v4/4iCr6K5wfMRRjxp0DA6-2CLnB4NHhg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Tangerine';
+  font-style: normal;
+  font-weight: 700;
+  font-display: block;
+  src: url(https://fonts.gstatic.com/s/tangerine/v17/Iurd6Y5j_oScZZow4VO5srNZi5FN.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/5vvr9Vy74if2I6bQbJvbw7SY1pQ.woff2"); font-display: swap; font-style: normal; font-weight: 400; unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/EOr0mi4hNtlgWNn9if640EZzXCo.woff2"); font-display: swap; font-style: normal; font-weight: 400; unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116 }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/Y9k9QrlZAqio88Klkmbd8VoMQc.woff2"); font-display: swap; font-style: normal; font-weight: 400; unicode-range: U+1F00-1FFF }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/OYrD2tBIBPvoJXiIHnLoOXnY9M.woff2"); font-display: swap; font-style: normal; font-weight: 400; unicode-range: U+0370-03FF }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/JeYwfuaPfZHQhEG8U5gtPDZ7WQ.woff2"); font-display: swap; font-style: normal; font-weight: 400; unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/vQyevYAyHtARFwPqUzQGpnDs.woff2"); font-display: swap; font-style: normal; font-weight: 400; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/b6Y37FthZeALduNqHicBT6FutY.woff2"); font-display: swap; font-style: normal; font-weight: 400; unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/BkDpl4ghaqvMi1btKFyG2tdbec.woff2"); font-display: swap; font-style: normal; font-weight: 300; unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/zAMK70AQRFSShJgUiaR5IiIhgzk.woff2"); font-display: swap; font-style: normal; font-weight: 300; unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116 }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/IETjvc5qzUaRoaruDpPSwCUM8.woff2"); font-display: swap; font-style: normal; font-weight: 300; unicode-range: U+1F00-1FFF }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/oLCoaT3ioA0fHdJnWR9W6k7NY.woff2"); font-display: swap; font-style: normal; font-weight: 300; unicode-range: U+0370-03FF }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/Sj0PCHQSBjFmEp6NBWg6FNaKc.woff2"); font-display: swap; font-style: normal; font-weight: 300; unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/v2q8JTTTs7McDMSEhnxAIBqd0.woff2"); font-display: swap; font-style: normal; font-weight: 300; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/H4TfENUY1rh8R9UaSD6vngjJP3M.woff2"); font-display: swap; font-style: normal; font-weight: 300; unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/hyOgCu0Xnghbimh0pE8QTvtt2AU.woff2"); font-display: swap; font-style: normal; font-weight: 600; unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/NeGmSOXrPBfEFIy5YZeHq17LEDA.woff2"); font-display: swap; font-style: normal; font-weight: 600; unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116 }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/oYaAX5himiTPYuN8vLWnqBbfD2s.woff2"); font-display: swap; font-style: normal; font-weight: 600; unicode-range: U+1F00-1FFF }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/lEJLP4R0yuCaMCjSXYHtJw72M.woff2"); font-display: swap; font-style: normal; font-weight: 600; unicode-range: U+0370-03FF }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/cRJyLNuTJR5jbyKzGi33wU9cqIQ.woff2"); font-display: swap; font-style: normal; font-weight: 600; unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/1ZFS7N918ojhhd0nQWdj3jz4w.woff2"); font-display: swap; font-style: normal; font-weight: 600; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/A0Wcc7NgXMjUuFdquHDrIZpzZw0.woff2"); font-display: swap; font-style: normal; font-weight: 600; unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/CfMzU8w2e7tHgF4T4rATMPuWosA.woff2"); font-display: swap; font-style: italic; font-weight: 400; unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/867QObYax8ANsfX4TGEVU9YiCM.woff2"); font-display: swap; font-style: italic; font-weight: 400; unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116 }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/Oyn2ZbENFdnW7mt2Lzjk1h9Zb9k.woff2"); font-display: swap; font-style: italic; font-weight: 400; unicode-range: U+1F00-1FFF }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/cdAe8hgZ1cMyLu9g005pAW3xMo.woff2"); font-display: swap; font-style: italic; font-weight: 400; unicode-range: U+0370-03FF }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/DOfvtmE1UplCq161m6Hj8CSQYg.woff2"); font-display: swap; font-style: italic; font-weight: 400; unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/vFzuJY0c65av44uhEKB6vyjFMg.woff2"); font-display: swap; font-style: italic; font-weight: 400; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/tKtBcDnBMevsEEJKdNGhhkLzYo.woff2"); font-display: swap; font-style: italic; font-weight: 400; unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/5A3Ce6C9YYmCjpQx9M4inSaKU.woff2"); font-display: swap; font-style: normal; font-weight: 500; unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/Qx95Xyt0Ka3SGhinnbXIGpEIyP4.woff2"); font-display: swap; font-style: normal; font-weight: 500; unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116 }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/6mJuEAguuIuMog10gGvH5d3cl8.woff2"); font-display: swap; font-style: normal; font-weight: 500; unicode-range: U+1F00-1FFF }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/xYYWaj7wCU5zSQH0eXvSaS19wo.woff2"); font-display: swap; font-style: normal; font-weight: 500; unicode-range: U+0370-03FF }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/otTaNuNpVK4RbdlT7zDDdKvQBA.woff2"); font-display: swap; font-style: normal; font-weight: 500; unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/d3tHnaQIAeqiE5hGcRw4mmgWYU.woff2"); font-display: swap; font-style: normal; font-weight: 500; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/DolVirEGb34pEXEp8t8FQBSK4.woff2"); font-display: swap; font-style: normal; font-weight: 500; unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/DpPBYI0sL4fYLgAkX8KXOPVt7c.woff2"); font-display: swap; font-style: normal; font-weight: 700; unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/4RAEQdEOrcnDkhHiiCbJOw92Lk.woff2"); font-display: swap; font-style: normal; font-weight: 700; unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116 }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/1K3W8DizY3v4emK8Mb08YHxTbs.woff2"); font-display: swap; font-style: normal; font-weight: 700; unicode-range: U+1F00-1FFF }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/tUSCtfYVM1I1IchuyCwz9gDdQ.woff2"); font-display: swap; font-style: normal; font-weight: 700; unicode-range: U+0370-03FF }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/VgYFWiwsAC5OYxAycRXXvhze58.woff2"); font-display: swap; font-style: normal; font-weight: 700; unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/DXD0Q7LSl7HEvDzucnyLnGBHM.woff2"); font-display: swap; font-style: normal; font-weight: 700; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/GIryZETIX4IFypco5pYZONKhJIo.woff2"); font-display: swap; font-style: normal; font-weight: 700; unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/mkY5Sgyq51ik0AMrSBwhm9DJg.woff2"); font-display: block; font-style: normal; font-weight: 900; unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/X5hj6qzcHUYv7h1390c8Rhm6550.woff2"); font-display: block; font-style: normal; font-weight: 900; unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116 }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/gQhNpS3tN86g8RcVKYUUaKt2oMQ.woff2"); font-display: block; font-style: normal; font-weight: 900; unicode-range: U+1F00-1FFF }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/cugnVhSraaRyANCaUtI5FV17wk.woff2"); font-display: block; font-style: normal; font-weight: 900; unicode-range: U+0370-03FF }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/5HcVoGak8k5agFJSaKa4floXVu0.woff2"); font-display: block; font-style: normal; font-weight: 900; unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/jn4BtSPLlS0NDp1KiFAtFKiiY0o.woff2"); font-display: block; font-style: normal; font-weight: 900; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/P2Bw01CtL0b9wqygO0sSVogWbo.woff2"); font-display: block; font-style: normal; font-weight: 900; unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/05KsVHGDmqXSBXM4yRZ65P8i0s.woff2"); font-display: block; font-style: italic; font-weight: 900; unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/ky8ovPukK4dJ1Pxq74qGhOqCYI.woff2"); font-display: block; font-style: italic; font-weight: 900; unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116 }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/vvNSqIj42qeQ2bvCRBIWKHscrc.woff2"); font-display: block; font-style: italic; font-weight: 900; unicode-range: U+1F00-1FFF }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/3ZmXbBKToJifDV9gwcifVd1tEY.woff2"); font-display: block; font-style: italic; font-weight: 900; unicode-range: U+0370-03FF }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/FNfhX3dt4ChuLJq2PwdlxHO7PU.woff2"); font-display: block; font-style: italic; font-weight: 900; unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/g0c8vEViiXNlKAgI4Ymmk3Ig.woff2"); font-display: block; font-style: italic; font-weight: 900; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/efTfQcBJ53kM2pB1hezSZ3RDUFs.woff2"); font-display: block; font-style: italic; font-weight: 900; unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/H89BbHkbHDzlxZzxi8uPzTsp90.woff2"); font-display: swap; font-style: italic; font-weight: 700; unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/u6gJwDuwB143kpNK1T1MDKDWkMc.woff2"); font-display: swap; font-style: italic; font-weight: 700; unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116 }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/43sJ6MfOPh1LCJt46OvyDuSbA6o.woff2"); font-display: swap; font-style: italic; font-weight: 700; unicode-range: U+1F00-1FFF }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/wccHG0r4gBDAIRhfHiOlq6oEkqw.woff2"); font-display: swap; font-style: italic; font-weight: 700; unicode-range: U+0370-03FF }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/WZ367JPwf9bRW6LdTHN8rXgSjw.woff2"); font-display: swap; font-style: italic; font-weight: 700; unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/QxmhnWTzLtyjIiZcfaLIJ8EFBXU.woff2"); font-display: swap; font-style: italic; font-weight: 700; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/2A4Xx7CngadFGlVV4xrO06OBHY.woff2"); font-display: swap; font-style: italic; font-weight: 700; unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/vxBnBhH8768IFAXAb4Qf6wQHKs.woff2"); font-display: swap; font-style: italic; font-weight: 600; unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/zSsEuoJdh8mcFVk976C05ZfQr8.woff2"); font-display: swap; font-style: italic; font-weight: 600; unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116 }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/b8ezwLrN7h2AUoPEENcsTMVJ0.woff2"); font-display: swap; font-style: italic; font-weight: 600; unicode-range: U+1F00-1FFF }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/mvNEIBLyHbscgHtwfsByjXUz3XY.woff2"); font-display: swap; font-style: italic; font-weight: 600; unicode-range: U+0370-03FF }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/6FI2EneKzM3qBy5foOZXey7coCA.woff2"); font-display: swap; font-style: italic; font-weight: 600; unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/qrVgiXNd6RuQjETYQiVQ9nqCk.woff2"); font-display: swap; font-style: italic; font-weight: 600; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD }
+@font-face { font-family: "Inter"; src: url("https://framerusercontent.com/assets/NHHeAKJVP0ZWHk5YZnQQChIsBM.woff2"); font-display: swap; font-style: italic; font-weight: 600; unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB }
+@font-face { font-family: "Instrument Sans Placeholder"; src: local("Arial"); ascent-override: 93.97%; descent-override: 24.22%; line-gap-override: 0.00%; size-adjust: 103.22% }
+@font-face { font-family: "Tiro Devanagari Hindi Placeholder"; src: local("Times New Roman"); ascent-override: 67.63%; descent-override: 21.95%; line-gap-override: 29.56%; size-adjust: 111.64% }
+@font-face { font-family: "Inter Placeholder"; src: local("Arial"); ascent-override: 89.79%; descent-override: 22.36%; line-gap-override: 0.00%; size-adjust: 107.89% }
+        
+    </style>
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    
+    
+    
+</head>
+<body>
+    <script async src="https://events.framer.com/script?v=2" data-fid="ea25f3ea92279cc6c1b6c99f4c16fed99cd6a2767e1ce85fa09d008dd4d4f363" data-no-nt></script>
+    
+    
+    
+    <div id="main"></div>
+    
+    
+    
+    <script data-framer-appear-animation="no-preference"></script>
+    <script type="module" async data-framer-bundle="main">
+        import * as Framer from "framer";
+import * as React from "react";
+import { createPortal } from "react-dom";
+import * as ReactDOM from "react-dom/client";
+
+        const routes = {augiA20Il: {elements: {}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/kYwO6uNac53wcER9wUSS/zmKwLm3m0GMJ4uJewId1/augiA20Il.js")), path: "/"}, PR_PrU4to: {elements: {}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/fjKxVJ2zV5wJxwzc6MZa/gwodCAsEfXuGjKH7oQsb/PR_PrU4to.js")), path: "/amirul"}, qd9xiOS8Y: {elements: {}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/So0Ai4KDOgk78qUv5hX6/uz8fUFc8w8vTweaOMbd4/qd9xiOS8Y.js")), path: "/hanani"}, eSzElrCOF: {elements: {}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/2fUmmXiWM5Dj6PZpXru9/ZNRfHl4iEpuKXtWelFjB/eSzElrCOF.js")), path: "/xxxhanani"}, ZQT0u0Xsk: {elements: {}, page: Framer.lazy(() => import("https://framerusercontent.com/modules/mFbYrkx4BQ1nLC9vll6C/Ix02Jkb07R9mhOJV6Rp2/ZQT0u0Xsk.js")), path: "/page"}}
+
+        const locales = [{code: "en-US", id: "default", name: "English", slug: ""}]
+        const collectionUtils = {gZpnNqT0V: async () => (await import("https://framerusercontent.com/modules/e2rtvBFHmjtb1UpJ1x7W/az4AXBEGaAvevKQVEybf/gZpnNqT0V.js"))?.["utils"]}
+        const framerSiteId = "ea25f3ea92279cc6c1b6c99f4c16fed99cd6a2767e1ce85fa09d008dd4d4f363"
+        
+
+        export async function getPageRoot({ routeId, pathVariables, localeId }) {
+            const rootPreload = routes[routeId].page.preload()
+
+            const content = React.createElement(
+                Framer.PageRoot,
+                {
+                    isWebsite: true,
+                    routeId,
+                    pathVariables,
+                    routes,
+                    collectionUtils,
+                    framerSiteId,
+                    notFoundPage: Framer.lazy(() => import("__framer-not-found-page")),
+                    isReducedMotion: undefined,
+                    localeId,
+                    locales,
+                    preserveQueryParams: undefined,
+                    siteCanonicalURL: "https://amirulhanani.framer.website",
+                    EditorBar: 
+typeof window === "undefined" ? undefined : (() => {
+    const isBot = /bot|-google|google-|yandex|ia_archiver|crawl|spider/iu.test(navigator.userAgent)
+    if (isBot) return
+
+    return Framer.lazy(async () => {
+        const { createEditorBar } = await import("https://edit.framer.com/init.mjs")
+        return {
+            default: createEditorBar({
+                dependencies: {
+                    __version: 1,
+                    framer: {
+                        useCurrentRoute: Framer.useCurrentRoute,
+                        useLocaleInfo: Framer.useLocaleInfo,
+                        useRouter: Framer.useRouter,
+                    },
+                    react: {
+                        createElement: React.createElement,
+                        memo: React.memo,
+                        useCallback: React.useCallback,
+                        useEffect: React.useEffect,
+                        useRef: React.useRef,
+                        useState: React.useState,
+                    },
+                    "react-dom": { createPortal },
+                },
+            }),
+        }
+    })
+})()
+,
+                    
+                }
+            )
+
+            const contentWithFeaturesContext = React.createElement(
+                Framer.LibraryFeaturesProvider,
+                {
+                    children: content,
+                    value: {editorBarOnPageEditing: false, motionDivToDiv: false, pauseOffscreen: true, replaceNestedLinks: true, yieldOnTap: false}
+                }
+            )
+
+            const contentWithGracefullyDegradingErrorBoundary = React.createElement(Framer.GracefullyDegradingErrorBoundary, {
+                children: contentWithFeaturesContext
+            })
+
+            
+            const page = React.createElement(Framer.PageEffectsProvider, {
+                children: contentWithGracefullyDegradingErrorBoundary,
+                value: {routes: {}}
+            })
+
+            // We don't want the initial render to immediately have to suspend.
+            await rootPreload
+            return page
+        }
+
+        const isBrowser = typeof document !== "undefined"
+        if (isBrowser) {
+            window.__framer_importFromPackage = (packageAndFilename, exportIdentifier) => () => {
+                return React.createElement(Framer.ErrorPlaceholder, { error: 'Package component not supported: "' + exportIdentifier + '" in "' + packageAndFilename + '"' })
+            }
+
+            // A lot of libraries assume process.env.NODE_ENV is present in runtime/buildtime, so we are polyfilling it
+            window.process = {
+                ...window.process,
+                env: {
+                    ...(window.process ? window.process.env: undefined),
+                    NODE_ENV: "production"
+                }
+            }
+
+            window.__framer_events = window.__framer_events || []
+
+            // Fallback support for stack gaps
+            Framer.installFlexboxGapWorkaroundIfNeeded()
+
+            const container = document.getElementById("main")
+            // We know that #main is parsed before this script, so we don't need to wait for DOMContentLoaded or similar events.
+            if ("framerHydrateV2" in container.dataset) main(true, container)
+            else main(false, container)
+        }
+
+        function track() {
+            if (!isBrowser) return
+            window.__framer_events.push(arguments)
+        }
+
+        async function main(shouldHydrate, container) {
+            function handleError(error, errorInfo, recoverable = true) {
+                if (error.caught || window.__framer_hadFatalError) return // we already logged it
+
+                const componentStack = errorInfo?.componentStack
+                if (recoverable) {
+                    console.warn("Recoverable error has happened. Please check any custom code or code overrides to fix server/client mismatches:\n", error, componentStack)
+                    // we only want to collect 1%, because this can be quite noisy (floods the data pipeline)
+                    if (Math.random() > 0.01) return
+                } else {
+                    console.error("Fatal crash has happened. If you are the author of this website, please report this issue to the Framer team via https://www.framer.community/:\n", error, componentStack)
+                }
+                track(recoverable ? "published_site_load_recoverable_error" : "published_site_load_error", {
+                    message: String(error),
+                    componentStack, // componentStack is more useful
+                    stack: componentStack ? undefined : error instanceof Error && typeof error.stack === "string" ? error.stack : null,
+                })
+            }
+
+            try {
+                let routeId, localeId, pathVariables, breakpoints
+                if (shouldHydrate) {
+                    const routeData = JSON.parse(container.dataset.framerHydrateV2)
+                    routeId = routeData.routeId
+                    localeId = routeData.localeId
+                    pathVariables = routeData.pathVariables
+                    breakpoints = routeData.breakpoints
+
+                    routeId = Framer.patchRoutesForABTesting(routes, routeId) // Prioritize optimized route id to avoid flickering in browsers not supporting the server-timing header (Safari older than 16.4)
+                } else {
+                    Framer.patchRoutesForABTesting(routes, undefined) // This must happen before inferInitialRouteFromPath
+
+                    const routeData = Framer.inferInitialRouteFromPath(routes, decodeURIComponent(location.pathname), true, locales)
+                    routeId = routeData.routeId
+                    localeId = routeData.localeId
+                    pathVariables = routeData.pathVariables
+                }
+
+                const pagePromise = getPageRoot({ routeId, localeId, pathVariables })
+
+                
+if (typeof window !== "undefined") {
+    void (async () => {
+        const route = routes[routeId]
+
+        const defaultLocaleId = "default"
+        const framerLocale = locales.find(({ id }) => !localeId ? id === defaultLocaleId : id === localeId).code
+
+        let collectionItemId = null
+        if (route?.collectionId && collectionUtils) {
+              const utils = await collectionUtils[route.collectionId]?.()
+              const [slug] = Object.values(pathVariables)
+              if (utils && typeof slug === "string") {
+                  collectionItemId = (await utils.getRecordIdBySlug(slug, framerLocale || undefined)) ?? null
+              }
+        }
+
+        const resolvedDateTimeOptions = Intl.DateTimeFormat().resolvedOptions()
+        const timezone = resolvedDateTimeOptions.timeZone
+        const locale = resolvedDateTimeOptions.locale
+
+        // wait for the page to be activated before sending the pageview event
+        // https://developer.chrome.com/docs/web-platform/prerender-pages#impact-on-analytics
+        await new Promise((resolve) => {
+            if (document.prerendering) {
+                document.addEventListener("prerenderingchange", resolve, { once: true })
+            } else {
+                resolve()
+            }
+        })
+
+        window.__framer_events.push([
+            "published_site_pageview",
+            {
+                framerSiteId: framerSiteId ?? null,
+                routePath: route?.path || "/",
+                collectionItemId,
+                framerLocale: framerLocale || null,
+                webPageId: route?.abTestingVariantId ?? routeId,
+                abTestId: route?.abTestId,
+                referrer: document.referrer || null,
+                url: window.location.href,
+                hostname: window.location.hostname || null,
+                pathname: window.location.pathname || null,
+                hash: window.location.hash || null,
+                search: window.location.search || null,
+                timezone,
+                locale,
+            },
+            "eager"
+        ])
+
+        // Yield to avoid blocking the main thread with the user code
+        await Framer.yieldToMain({ priority: "background", ensureContinueBeforeUnload: true, continueAfter: "paint" })
+
+        document.dispatchEvent(new CustomEvent("framer:pageview", {
+            detail: { framerLocale: framerLocale || null }
+        }))
+    })()
+}
+
+
+                const page = await pagePromise
+                if (shouldHydrate) {
+                    
+
+                    Framer.withPerformanceMarks("framer-rewrite-breakpoints", () => {
+                        Framer.removeHiddenBreakpointLayersV2(breakpoints)
+                        window.__framer_onRewriteBreakpoints?.(breakpoints)
+                    })
+
+                    
+
+                    const startTransition = React.startTransition
+                    startTransition(() => {
+                        Framer.markHydrationStart()
+                        if (true) Framer.turnOffReactEventHandling()
+                        ReactDOM.hydrateRoot(container, page, { onRecoverableError: handleError })
+                    })
+                } else {
+                    
+                    ReactDOM.createRoot(container, { onRecoverableError: handleError }).render(page)
+                }
+            } catch (error) {
+                handleError(error, undefined, false)
+                throw error
+            }
+        }
+
+        
+
+        
+        ;(function () {
+            if (!isBrowser) return
+
+            React.startTransition(() => {
+                ReactDOM.createRoot(document.getElementById("__framer-badge-container")).render(React.createElement(React.Suspense, {},
+                    React.createElement(Framer.withStyleAppearEffect(Framer.Container), {
+                        className: "__framer-badge",
+                        __framer__threshold: 0.5,
+                        __framer__animateOnce: true,
+                        __framer__opacity: 0,
+                        __framer__targetOpacity: 1,
+                        __framer__rotate: 0,
+                        __framer__x: 0,
+                        __framer__y: 10,
+                        __framer__scale: 1,
+                        __framer__transition: {
+                            "type": "spring",
+                            "ease": [0.44, 0, 0.56, 1],
+                            "duration": 0.3,
+                            "delay": 1,
+                            "stiffness": 350,
+                            "damping": 40,
+                            "mass": 1.5
+                        },
+                        __framer__rotateX: 0,
+                        __framer__rotateY: 0,
+                        __framer__perspective: 1200,
+                    }, React.createElement(React.lazy(() => import("__framer-badge")))
+                    )
+                ))
+            })
+        })()
+    </script>
+    
+    
+    
+</body>
+</html>
